@@ -31,14 +31,11 @@ var init = function (window) {
 
     // TODO 3 : Call the drawCircle() function
 
-drawCircle();
-drawCircle();
-drawCircle();
-drawCircle();
-drawCircle();
-
-
-
+    drawCircle();
+    drawCircle();
+    drawCircle();
+    drawCircle();
+    drawCircle();
 
     // TODO 7 : Use a loop to create multiple circles
 
@@ -81,7 +78,18 @@ drawCircle();
       }
 
       // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-
+      //if circles go past the left side of the screen (doesn't work)
+      if (circle.x < 0) {
+        circle.x = circle.width;
+      }
+      //if circles go past the top of screen (works)
+      if (circle.y > canvas.height) {
+        circle.y = 0;
+      }
+      //if circles go past the bottom of the screen (works)
+      if (circle.y < 0) {
+        circle.y = canvas.height;
+      }
       // YOUR TODO 6 CODE ENDS HERE //////////////////////////
     };
 
